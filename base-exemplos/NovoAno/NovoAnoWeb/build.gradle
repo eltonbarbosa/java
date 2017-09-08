@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: "war"
+apply plugin: 'com.bmuschko.tomcat'
+
+repositories {
+   mavenLocal()
+   mavenCentral()
+}
+
+dependencies {
+	compile project(":NovoAnoUtil")
+    providedCompile "javax.servlet:javax.servlet-api:3.1.0" 
+
+    def tomcatVersion = '7.0.57'
+	tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+	"org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+	tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+		exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+	}
+}
+buildscript {
+	    repositories {
+	        mavenCentral()
+	    }
+	    dependencies {
+	        classpath 'com.bmuschko:gradle-tomcat-plugin:2.0'
+	    }
+}
