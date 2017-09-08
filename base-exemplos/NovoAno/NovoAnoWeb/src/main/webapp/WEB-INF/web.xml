@@ -6,7 +6,11 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
 		<servlet-name>DaysToGo</servlet-name>
+<<<<<<< HEAD
 		<servlet-class>com.web.dm107.DaysToGoServlet</servlet-class>
+=======
+		<servlet-class>com.web.DaysToGoServlet</servlet-class>
+>>>>>>> Exemplo projeto web gradle
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DaysToGo</servlet-name>
