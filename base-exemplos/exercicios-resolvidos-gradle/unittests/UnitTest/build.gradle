@@ -1,0 +1,15 @@
+/*
+Para rodar o teste, execute a task 'test' task.
+
+    $ gradle test
+
+Para ver o relatório de resultados dos testes execute:
+
+    $ open build/reports/tests/index.html
+*/
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
