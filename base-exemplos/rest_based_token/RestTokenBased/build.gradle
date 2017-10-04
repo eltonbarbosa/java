@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'war'
+//Using the gretty plugin to be able to use jetty server embedded
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+repositories {
+	jcenter()
+}
+
+//Jetty Configuration
+gretty {
+	httpPort = 8081
+}
+
+dependencies {
+	//dependencies scope provide
+	providedCompile "javax.servlet:javax.servlet-api:3.1.0" 
+	
+	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.43'
+	compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0.1'
+	compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: '2.25'
+	compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.25'
+	compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.25'
+	
+	//unit test dependencies
+	testCompile 'junit:junit:4.12'
+}

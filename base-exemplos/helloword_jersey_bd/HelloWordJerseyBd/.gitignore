@@ -1,0 +1,15 @@
+*.class
+*.jar
+*.war
+*.ear
+.gradle
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+.settings
+bin
+build
+.classpath
+.project
+.metadata/
